@@ -20,21 +20,6 @@ type (
 	HWND HANDLE
 )
 
-func IsKeyPressed(keyVirtualCode int) bool {
-	// Query key mapped to integer `0x00` to `0xFF` if it's pressed.
-	asynch, _, _ := procGetAsyncKeyState.Call(uintptr(keyVirtualCode))
-	
-	// If the least significant bit is set ignore it.
-	//
-	// As it's written in the documentation:
-	// `if the least significant bit is set, the key was pressed after the previous call to GetAsyncKeyState.`
-	// Which we don't care about :)
-	if asynch&0x1 == 0 {
-		return false
-	}
-	
-	return true
-}
 
 func getClassName(hwnd HWND) (name string, err error) {
 	n := make([]uint16, 256)
@@ -67,7 +52,12 @@ func checkInArray(a string, list []string) bool {
     return false
 }
 
-
+```
+Getting key state only if window is active
+keyVirtualCode - win32api virtual code, you can more info about it on microsoft win api documentation
+"false" argument means that to get key state, window should be active
+"true" argument means that to get key state, window might not be active. The same as an IsKeyPressed function
+```
 func IsKeyPressedGlobal(keyVirtualCode int, global bool) bool {
 	if global {
 		return IsKeyPressed(keyVirtualCode)
@@ -80,4 +70,25 @@ func IsKeyPressedGlobal(keyVirtualCode int, global bool) bool {
 		}
 	}
 	return false
+}
+
+
+```
+Getting key state (even if window inactive)
+keyVirtualCode - win32api virtual code, you can more info about it on microsoft win api documentation
+```
+func IsKeyPressed(keyVirtualCode int) bool {
+	// Query key mapped to integer `0x00` to `0xFF` if it's pressed.
+	asynch, _, _ := procGetAsyncKeyState.Call(uintptr(keyVirtualCode))
+	
+	// If the least significant bit is set ignore it.
+	//
+	// As it's written in the documentation:
+	// `if the least significant bit is set, the key was pressed after the previous call to GetAsyncKeyState.`
+	// Which we don't care about :)
+	if asynch&0x1 == 0 {
+		return false
+	}
+	
+	return true
 }
