@@ -11,7 +11,10 @@ Just go to this page https://docs.microsoft.com/en-us/windows/win32/inputdev/vir
 ```go
 package main
 
-import "github.com/Numenorean/keypresses"
+import (
+  "github.com/Numenorean/keypresses"
+  "time"
+)
 
 func main() {
   for true {
@@ -27,7 +30,10 @@ func main() {
 ```go
 package main
 
-import "github.com/Numenorean/keypresses"
+import (
+  "github.com/Numenorean/keypresses"
+  "time"
+)
 
 func main() {
   for true {
