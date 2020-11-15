@@ -1,7 +1,7 @@
 # keypresses
 This lib provide you checking if any key is pressed, fully built on win32api
 ### Installation
-Install this package with command `go get github.com/Numenorean/keypresses`
+Install this package with command `go get -u github.com/Numenorean/keypresses`
 
 ### Finding virtualKeyCodes
 Just go to this page https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
