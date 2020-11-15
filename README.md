@@ -7,7 +7,7 @@ Install this package with command `go get -u github.com/Numenorean/keypresses`
 Just go to this page https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 
 # Usage
-### Example of getting key state (even if window inactive)
+### Example of getting key state (even if current window is inactive)
 ```go
 package main
 
@@ -27,7 +27,7 @@ func main() {
 }
 ```
 
-### Example of getting key state only if window is active
+### Example of getting key state only if current window is active
 ```go
 package main
 
