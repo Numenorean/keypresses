@@ -53,10 +53,10 @@ func checkInArray(a string, list []string) bool {
 }
 
 /*
-Getting key state only if window is active
-keyVirtualCode - win32api virtual code, you can more info about it on microsoft win api documentation
-"false" argument means that to get key state, window should be active
-"true" argument means that to get key state, window might not be active. The same as an IsKeyPressed function
+Getting key state only if current window is active.
+keyVirtualCode - win32api virtual code, you can more info about it on microsoft win api documentation.
+"false" argument means that to get key state, window should be active.
+"true" argument means that to get key state, window might not be active, the same as an IsKeyPressed function.
 */
 func IsKeyPressedGlobal(keyVirtualCode int, global bool) bool {
 	if global {
@@ -74,8 +74,8 @@ func IsKeyPressedGlobal(keyVirtualCode int, global bool) bool {
 
 
 /*
-Getting key state (even if window inactive)
-keyVirtualCode - win32api virtual code, you can more info about it on microsoft win api documentation
+Getting key state (even if window inactive).
+keyVirtualCode - win32api virtual code, you can more info about it on microsoft win api documentation.
 */
 func IsKeyPressed(keyVirtualCode int) bool {
 	// Query key mapped to integer `0x00` to `0xFF` if it's pressed.
