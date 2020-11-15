@@ -12,8 +12,9 @@ Just go to this page https://docs.microsoft.com/en-us/windows/win32/inputdev/vir
 package main
 
 import (
-  "github.com/Numenorean/keypresses"
-  "time"
+	"github.com/Numenorean/keypresses"
+	"time"
+	"fmt"
 )
 
 func main() {
@@ -31,8 +32,9 @@ func main() {
 package main
 
 import (
-  "github.com/Numenorean/keypresses"
-  "time"
+	"github.com/Numenorean/keypresses"
+	"time"
+	"fmt"
 )
 
 func main() {
