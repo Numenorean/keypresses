@@ -9,7 +9,7 @@ Just go to this page https://docs.microsoft.com/en-us/windows/win32/inputdev/vir
 
 ### Usage
 # Example of getting key state (even if window inactive)
-```
+```go
 package main
 
 import "github.com/Numenorean/keypresses"
@@ -25,7 +25,7 @@ func main() {
 ```
 
 # Example of getting key state only if window is activate
-```
+```go
 package main
 
 import "github.com/Numenorean/keypresses"
