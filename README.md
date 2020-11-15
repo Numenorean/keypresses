@@ -24,7 +24,7 @@ func main() {
 }
 ```
 
-# Example of getting key state only if window is activate
+# Example of getting key state only if window is active
 ```go
 package main
 
