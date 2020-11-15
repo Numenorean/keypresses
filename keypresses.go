@@ -3,7 +3,6 @@ package keypresses
 import (
 	"syscall"
 	"unsafe"
-	"time"
 	"golang.org/x/sys/windows"
 )
 
