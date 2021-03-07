@@ -1,5 +1,5 @@
 # keypresses
-This lib provide you checking if any key is pressed, fully built on win32api
+This lib provides you checking if any key is pressed, fully built on win32api
 ### Installation
 Install this package with command `go get -u github.com/Numenorean/keypresses`
 
